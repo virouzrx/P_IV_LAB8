@@ -1,0 +1,50 @@
+﻿<Window x:Class="Z_8_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Z_8_WPF"
+        mc:Ignorable="d"
+        Title="Z_8_WPF" Height="450" Width="800">
+    <Grid Background="LightGray" Margin="0,0,-6,-30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="76*"/>
+            <RowDefinition Height="170*"/>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Canvas x:Name="canvas" Background="White" Grid.RowSpan="5" HorizontalAlignment="Left" Height="420" VerticalAlignment="Top" Width="500
+                " Margin="60,30,0,0" Grid.ColumnSpan="2">
+            <Rectangle x:Name="RecA" Height="100" Canvas.Left="25" Stroke="black" Canvas.Bottom="0" Width="75" Fill="Red"/>
+            <Rectangle x:Name="RecB" Height="100" Canvas.Left="150" Stroke="black" Canvas.Bottom="0" Width="75" Fill="Green"/>
+            <Rectangle x:Name="RecC" Height="100" Canvas.Left="275" Stroke="black" Canvas.Bottom="0" Width="75" Fill="Blue"/>
+            <Rectangle x:Name="RecD" Height="100" Canvas.Left="400" Stroke="black" Canvas.Bottom="0" Width="75" Fill="Yellow"/>
+        </Canvas>
+        <TextBlock x:Name="QuestionTextblock" HorizontalAlignment="Center" Margin="85.4,30,4.6,0" TextWrapping="Wrap" Text="Głosuj" VerticalAlignment="Top" Height="26" Width="226" TextAlignment="Center" RenderTransformOrigin="0.31,0.725" Grid.Column="1"/>
+        <WrapPanel Grid.Column="1" HorizontalAlignment="Center" Height="89" Grid.Row="1" VerticalAlignment="Top" Width="227" Margin="90.4,4,-1.4,0">
+            <!--poprawić guziki-->
+            <Button Content="A" Width="100" Height="30px" Margin="5" Click="Button_Click"/>
+            <Button Content="B" Width="100" Height="30px" Margin="5" Click="Button_Click"/>
+            <Button Content="C" Width="100" Height="30px" Margin="5" Click="Button_Click"/>
+            <Button Content="D" Width="100" Height="30px" Margin="5" Click="Button_Click"/>
+        </WrapPanel>
+        <!--Jak te okienka ustawić równo?-->
+        <StackPanel Orientation="Vertical" Grid.Column="1" HorizontalAlignment="Left" Height="79" Margin="90.4,98,0,0" Grid.Row="1" VerticalAlignment="Top" Width="221" Grid.RowSpan="2">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Suma Głosów                     " HorizontalAlignment="Center"/>
+                <TextBlock x:Name="AllVotes" Background="White" TextWrapping="Wrap" Text="00" Width="22" TextAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <!--Bardzo nieprofesjonalne rozmieszczanie okienek :c -->
+                <Label Content="Najwyższa liczba głosów    "/>
+                <TextBlock x:Name="MaxVote" Background="White" TextWrapping="Wrap" Text="00" Width="22" TextAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+        <!---->
+    </Grid>
+</Window>
